@@ -24,13 +24,41 @@ delete objektum.kor
 console.log(objektum)
 
 // 7. Ellenőrizd, hogy egy adott kulcs létezik-e a JSON objektumban. 
+const visszaAlakított = JSON.parse(frissitettJson)
 if ("nev" in objektum) {
-    console.log("Létzik a kulcs" + objektum.nev)
+    console.log("Létezik a kulcs" + objektum.nev)
 }
-else console.log("")
 
 // 8. Hozz létre egy JSON tömböt és adj hozzá elemeket. 
+const tombGyumolcsok = []
+
+tombGyumolcsok.push("alma")
+tombGyumolcsok.push("körte")
+
+const jsonTomb = JSON.stringify(tombGyumolcsok)
+console.log(jsonTomb)
+
 // 9. Szűrd ki a JSON tömböt egy adott feltétel alapján. 
+const tanulok = [
+    {nev: "Kovács", kor:19},
+    {nev: "Nagy", kor:22},
+    {nev: "Kiss", kor:21},
+    {nev: "Kádár", kor:25}
+]
+
+const fiatalok = []
+for (const tanulo of tanulok)
+{
+    if (tanulo.kor < 25) {
+        fiatalok.push(tanulo)
+    }
+}
+
+console.log(fiatalok)
+
+// Filter
+const fiatalokFilter = tanulok.filter(tanulo => tanulo.kor < 25)
+console.log(fiatalokFilter)
 // 10. Rendezd növekvő sorrendbe a JSON tömb elemeit egy kulcs alapján. 
 // 11. Keresd meg a JSON tömb legnagyobb elemét egy adott kulcs alapján. 
 // 12. Számolj össze egy JSON tömbben található számokat. 
