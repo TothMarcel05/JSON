@@ -59,7 +59,28 @@ console.log(fiatalok)
 // Filter
 const fiatalokFilter = tanulok.filter(tanulo => tanulo.kor < 25)
 console.log(fiatalokFilter)
+const tanulok2 = tanulok
+
 // 10. Rendezd növekvő sorrendbe a JSON tömb elemeit egy kulcs alapján. 
+for (let i = 0; i < tanulok.length; i++){
+    for (let j = 0; j < tanulok.length; j++){
+        if (tanulok[j].kor < tanulok[j+1].kor)
+        {
+            let temp = tanulok[j]
+            tanulok[j] = tanulok[j+1]
+            tanulok[j+1] = temp
+
+        }
+    }
+}
+
+console.log(tanulok)
+
+tanulok2.sort((a,b) => a.kor - b.kor)
+console.log(tanulok2)
+
+
+
 // 11. Keresd meg a JSON tömb legnagyobb elemét egy adott kulcs alapján. 
 // 12. Számolj össze egy JSON tömbben található számokat. 
 // 13. Cseréld ki egy JSON objektum értékét egy másik értékre. 
